@@ -12,7 +12,7 @@ sed -i "s#%%S3_ACCESS_KEY%%#$S3_ACCESS_KEY#" /root/.s3cfg
 sed -i "s#%%S3_SECRET_KEY%%#$S3_SECRET_KEY#" /root/.s3cfg
 
 # verify S3 config
-#s3cmd ls "s3://$S3_URL" > /dev/null
+s3cmd ls "s3://$S3_URL" > /dev/null
 
 # set cron schedule TODO: check if the string is valid (five or six values separated by white space)
 [[ -z "$CRON_SCHEDULE" ]] && CRON_SCHEDULE='0 2 * * *' && \
