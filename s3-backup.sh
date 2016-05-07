@@ -8,8 +8,8 @@ if [ -z "$S3_ACCESS_KEY" -o -z "$S3_SECRET_KEY" -o -z "$S3_URL" ]; then
 fi
 
 # set s3 config
-sed -i "s/%%S3_ACCESS_KEY%%/$S3_ACCESS_KEY/g" /root/.s3cfg
-sed -i "s/%%S3_SECRET_KEY%%/$S3_SECRET_KEY/g" /root/.s3cfg
+sed -i "s#%%S3_ACCESS_KEY%%#$S3_ACCESS_KEY#" /root/.s3cfg
+sed -i "s#%%S3_SECRET_KEY%%#$S3_SECRET_KEY#" /root/.s3cfg
 
 # verify S3 config
 #s3cmd ls "s3://$S3_URL" > /dev/null
